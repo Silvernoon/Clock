@@ -6,8 +6,6 @@ A Project for Task group work
 
 Qt required.
 
-### Linux
-
 <details>
 <summary><b>Linux</b></summary>
 
