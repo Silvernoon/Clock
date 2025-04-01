@@ -1,0 +1,61 @@
+{
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "generator": "Ninja",
+      "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/install",
+        "VCPKG_OVERLAY_TRIPLETS": "${sourceParentDir}/triplets",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_MODULE_PATH": "${sourceParentDir}/cmake",
+        "CMAKE_VERBOSE_MAKEFILE": true
+      }
+    },
+    {
+      "inherits": "base",
+      "name": "linux-release",
+      "displayName": "Linux x64",
+      "binaryDir": "${sourceParentDir}/build/linux-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "VCPKG_TARGET_TRIPLET": "x64-linux-mixed",
+        "CMAKE_INCLUDE_PATH": "${sourceParentDir}/lib/linux/include",
+        "CMAKE_LIBRARY_PATH": "${sourceParentDir}/lib/linux"
+      }
+    },
+    {
+      "inherits": "base",
+      "name": "windows-release",
+      "binaryDir": "${sourceParentDir}/build/windows-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_C_COMPILER": "x86_64-w64-mingw32-gcc",
+        "CMAKE_CXX_COMPILER": "x86_64-w64-mingw32-g++",
+        "VCPKG_TARGET_TRIPLET": "x64-windows"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "linux-build",
+      "configurePreset": "linux-release",
+      "configuration": "RelWithDebInfo",
+      "jobs": 4
+    },
+    {
+      "name": "windows-build",
+      "configurePreset": "windows-release",
+      "configuration": "RelWithDebInfo",
+      "jobs": 4
+    }
+  ]
+}
