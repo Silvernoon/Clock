@@ -17,6 +17,7 @@ cmake --build --preset=linux-build --target=test
 
 </details>
 
+<details>
 <summary><b>Windows</b></summary>
 
 ```cmake
