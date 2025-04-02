@@ -9,7 +9,6 @@
         "strategy": "external"
       },
       "generator": "Ninja",
-      "toolchainFile": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
       "cacheVariables": {
         "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/install",
         "VCPKG_OVERLAY_TRIPLETS": "${sourceParentDir}/triplets",
