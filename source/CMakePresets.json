@@ -11,7 +11,6 @@
       "generator": "Ninja",
       "cacheVariables": {
         "CMAKE_INSTALL_PREFIX": "${sourceParentDir}/install",
-        "VCPKG_OVERLAY_TRIPLETS": "${sourceParentDir}/triplets",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
         "CMAKE_MODULE_PATH": "${sourceParentDir}/cmake",
         "CMAKE_VERBOSE_MAKEFILE": true
@@ -26,7 +25,6 @@
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_C_COMPILER": "clang",
         "CMAKE_CXX_COMPILER": "clang++",
-        "VCPKG_TARGET_TRIPLET": "x64-linux-mixed",
         "CMAKE_INCLUDE_PATH": "${sourceParentDir}/lib/linux/include",
         "CMAKE_LIBRARY_PATH": "${sourceParentDir}/lib/linux"
       }
@@ -38,8 +36,7 @@
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_C_COMPILER": "x86_64-w64-mingw32-gcc",
-        "CMAKE_CXX_COMPILER": "x86_64-w64-mingw32-g++",
-        "VCPKG_TARGET_TRIPLET": "x64-windows"
+        "CMAKE_CXX_COMPILER": "x86_64-w64-mingw32-g++"
       }
     }
   ],
