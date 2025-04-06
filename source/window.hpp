@@ -6,16 +6,16 @@
 #include <QMainWindow>
 #include <QTime>
 
-class MainWindow : public QMainWindow {
+class ClockWindow : public QMainWindow {
   Q_OBJECT
 
 public:
-  explicit MainWindow(QWidget *parent = nullptr);
-  ~MainWindow();
+  explicit ClockWindow(QWidget *parent = nullptr);
+  ~ClockWindow();
 
-  void paintEvent(QPaintEvent *event);
+  void paintEvent(QPaintEvent *event) override; // 重写基类
 
-  void SetTime(QTime t);
+  void SetTime(const QTime t);
   QTime GetTime() const;
 
 private:
